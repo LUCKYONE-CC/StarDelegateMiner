@@ -1,5 +1,6 @@
 ﻿using StarDelegateMiner.Miner;
 using StarDelegateMiner.Models;
+using StarDelegateMiner.PoolHandler;
 
 namespace StarDelegateMiner
 {
@@ -9,19 +10,13 @@ namespace StarDelegateMiner
         {
             Pool pool = new Pool("pool.eu.woolypooly.com", 3124, "");
 
-            var poolReceiver = new PoolReceiver(pool);
-            poolReceiver.MessageReceived += Receiver_MessageReceived;
+            var poolHandler = new TestPool(pool);
 
-            var miner = new NexaMiner(pool, poolReceiver);
+            var miner = new NexaMiner(pool, poolHandler);
 
             miner.StartMiningTaskAsync();
 
             await Task.Delay(5000);
-        }
-
-        private static void Receiver_MessageReceived(object sender, MessageReceivedEventArgs e)
-        {
-            Console.WriteLine($"Received message: {e.Message}");
         }
     }
 }

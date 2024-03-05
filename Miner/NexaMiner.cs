@@ -8,16 +8,11 @@ namespace StarDelegateMiner.Miner
     /// </summary>
     public class NexaMiner : Miner
     {
-        public NexaMiner(Pool pool, PoolReceiver poolReceiver) : base(pool, poolReceiver) { }
+        public NexaMiner(Pool pool, PoolHandler.PoolHandler poolHandler) : base(pool, poolHandler) { }
 
         protected override async Task<ComputationResult> Compute(MessageReceivedEventArgs messageReceivedEventArgs)
         {
             return new ComputationResult();
-        }
-
-        protected override async Task SubmitWork(ComputationResult computationResult)
-        {
-            Console.WriteLine("Submitted work!");
         }
     }
 }
