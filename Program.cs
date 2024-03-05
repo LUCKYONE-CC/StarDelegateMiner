@@ -10,9 +10,9 @@ namespace StarDelegateMiner
         {
             Pool pool = new Pool("pool.eu.woolypooly.com", 3124, "");
 
-            var poolHandler = new TestPool(pool);
+            var poolHandler = new SamplePool(pool);
 
-            var miner = new NexaMiner(pool, poolHandler);
+            var miner = new SampleMiner(pool, poolHandler);
 
             miner.StartMiningTaskAsync();
 

@@ -2,9 +2,9 @@
 
 namespace StarDelegateMiner.PoolHandler
 {
-    public class TestPool : PoolHandler
+    public class SamplePool : PoolHandler
     {
-        public TestPool(Pool pool) : base(pool) { }
+        public SamplePool(Pool pool) : base(pool) { }
         public override Task OnStart()
         {
             while (true)
