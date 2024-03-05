@@ -9,3 +9,5 @@ The actual logic of the calculation should be outsourced to languages such as C+
 Everyone is welcome to expand Star Delegate and implement miners/pools accordingly. 
 
 Miners/pools can be added via a pull request.
+
+For other suggestions or errors, please create an issue.
